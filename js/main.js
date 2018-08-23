@@ -1,3 +1,4 @@
+// *********Bài tập ngày 22-08************
 // Funtion bài tập 1
 function btn_ps() {
   var psa, psb;
@@ -89,12 +90,49 @@ function btn_n() {
   }
 }
 
-// mảng
-// var a = [1, 2, 4, 6, 8, 9, 6, 5, 4, 64, 34, 6, 345];
-// var b = a[0];
-// for (let index = 0; index < a.length; index++) {
-//   if (b < a[index]) {
-//     b = a[index];
-//   }
-// }
-// console.log(b);
+// *********Bài tập ngày 23-08************
+// 1.Tính tổng 5 số
+var a = 0;
+for (let i = 0; i <= 5; i++) {
+  a = a + i;
+}
+document.write(a + "<br>");
+
+// 2.kiểm tra số nguyên tố 
+var n = 8;
+var flag = true; // Biến cờ hiệu
+if (n < 2) {
+  // Nếu n bé hơn 2 tức là không phải số nguyên tố
+  flag = false;
+} else if (n == 2) {
+  flag = true;
+} else if (n % 2 == 0) {
+  flag = false;
+} else {
+  // lặp từ 3 tới n-1 với bước nhảy là 2 (i+=2)
+  for (var i = 3; i < n - 1; i += 2) {
+    if (n % i == 0) {
+      flag = false;
+      break;
+    }
+  }
+}
+if (flag == true) {
+  // Kiểm tra biến flag
+  document.write(n + " là số nguyên tố <br/>");
+} else {
+  document.write(n + " không phải là số nguyên tố <br/>");
+}
+
+// 3.tìm ước chung lớn nhất
+var a, b;
+a = 2;
+b = 2;
+document.write("Ước Chung lớn nhất: " + UCLN(a, b) + "<br>");
+function UCLN(x, y) {
+  while (x != y) {
+    if (x > y) x = x - y;
+    else y = y - x;
+  }
+  return x;
+}
